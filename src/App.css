@@ -1,38 +1,367 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+.App * {
+    font-family: "Montserrat", sans-serif;
+    /* Font specified in the design document: Avenir Next is paid and hence I am using an alternative */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    padding: 30px;
+    padding-top: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Alerts Header */
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.flexGrow {
+    flex-grow: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+    font-size: 24px;
+    font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .dropdown {
+    width: 191px;
+    background-color: #ffffff;
+    border: 0px;
+    padding: 13px 21px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+} */
+
+.searchInput {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 25px;
+    padding: 11px 17px;
+    min-width: 25vw;
+}
+
+.searchIconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0091cf;
+    height: 35px;
+    width: 35px;
+    border-radius: 300px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    margin-left: -60px;
+}
+
+.searchIcon {
+    height: 20px;
+    color: #fff;
+    /* invert color */
+    filter: invert(1);
+}
+
+.createButton {
+    height: 44px;
+    background-color: #0091cf;
+    border-radius: 300px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.addIcon {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 32px;
+    font-weight: 600;
+    padding: 0px 16px;
+}
+
+.chevronDown {
+    height: 20px;
+    color: #fff;
+    font-size: 18px;
+    padding: 0px 10px;
+}
+
+.chevronDownIcon {
+    height: 16px;
+    /* invert color */
+    filter: invert(1);
+}
+
+.sortBy {
+    cursor: pointer;
+}
+
+/* Alerts Table */
+
+.tableHeader {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px;
+    background-color: #f5f5f5;
+    height: 40px;
+    border-radius: 24px;
+    font-size: 14px;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.flex3 {
+    flex: 3;
+}
+
+.flex4 {
+    flex: 4;
+}
+
+.flex5 {
+    flex: 5;
+}
+
+.mr16 {
+    margin-right: 16px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+.tableRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.mw100 {
+    display: inline-block;
+    min-width: 100px;
+}
+
+.mw150 {
+    display: inline-block;
+    min-width: 150px;
+}
+
+.mw200 {
+    display: inline-block;
+    min-width: 200px;
+}
+
+.red {
+    color: #ff0000;
+}
+
+.green {
+    color: #00ff00;
+}
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: 2% auto;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 16px;
+}
+
+.cancelBtn {
+    background-color: #c40202;
+    color: #f5f5f5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.submitBtn {
+    background-color: #078a07;
+    color: #f5f5f5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.modalInput {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    padding: 11px 17px;
+    margin-bottom: 12px;
+}
+
+select.modalInput {
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+}
+
+input[type="number"].modalInput {
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 0px 12px 12px 12px;
+}
+
+.fullWidth {
+    width: 90%;
+}
+
+.formContent {
+    font-size: 14px;
+}
+
+textarea.modalInput {
+    border-radius: 12px;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    margin-top: 2px;
+    background-color: #fff;
+    color: #000000b0;
+    min-width: 160px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.dropdownItem {
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.dropdownItem:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+/* Insight Bubble */
+
+.insightContainer {
+    display: none;
+    position: absolute;
+    left: 20%;
+    margin-top: -20px;
+    min-width: 50%;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 16px;
+    width: fit-content;
+    height: fit-content;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 14px;
+}
+
+.insightContainer .title {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.insightContainer .description {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.alertsRow:hover .insightContainer {
+    display: block;
+}
+
+.insightContainer::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.insightContainer .flexRow {
+    align-items: stretch;
+}
+
+.insightContainer .tableHeader {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.insightContainer .tableRow {
+    font-size: 13px;
+}
+
+.borderRight {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.borderLeft {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.insightContainer .tableRow {
+    min-width: 25vw;
 }
